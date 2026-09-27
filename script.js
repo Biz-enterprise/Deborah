@@ -583,6 +583,7 @@ function goToScene(id) {
 
   if (id === "scene-appreciation") runTypeReveal("scene-appreciation");
   if (id === "scene-heartfelt") runTypeReveal("scene-heartfelt");
+  if (id === "scene-cards") setupCardsScene();
   if (id === "scene-cake") setupCakeScene();
   if (id === "scene-finale") setupFinaleScene();
 }
@@ -704,6 +705,12 @@ document.querySelectorAll(".trait-card").forEach(card => {
     SoundManager.sparkle();
   });
 });
+
+function setupCardsScene() {
+  const btn = document.querySelector("#scene-cards .next-btn");
+  btn.classList.remove("visible");
+  setTimeout(() => btn.classList.add("visible"), 1800);
+}
 
 /* subtle tilt on desktop mouse move / mobile device orientation */
 const cardField = document.getElementById("card-field");
